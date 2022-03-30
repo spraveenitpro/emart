@@ -58,7 +58,7 @@ const Navbar = () => {
                                 Register
                             </a>
                             <a href="" className="btn btn-outline-dark ms-2">
-                                <i className="fa fa-shopping-cart me-1"></i>{' '}
+                                <i className="fa fa-shopping-cart me-1"></i>
                                 Cart
                             </a>
                         </div>
