@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Products = () => {
     const [data, setData] = useState([])
@@ -20,37 +22,100 @@ const Products = () => {
         getProducts()
     }, [])
     const Loading = () => {
-        return <>Loading..</>
+        return (
+            <>
+                <div className="row">
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                    <div className="col-md-3">
+                        <Skeleton height={250} />
+                    </div>
+                </div>
+            </>
+        )
+    }
+
+    const filterProduct = (cat) => {
+        const updatedList = data.filter((x) => x.category === cat)
+        setFilter(updatedList)
     }
 
     const ShowProducts = () => {
         return (
             <>
                 <div className="buttons d-flex justify-content-center mb-5  pb=5">
-                    <button className="btn btn-outline-dark">All </button>
-                    <button className="btn btn-outline-dark me-2">
+                    <button
+                        className="btn btn-outline-dark"
+                        onClick={() => setFilter(data)}
+                    >
+                        All{' '}
+                    </button>
+                    <button
+                        className="btn btn-outline-dark me-2"
+                        onClick={() => filterProduct("men's clothing")}
+                    >
                         Mens' Clothing
                     </button>
-                    <button className="btn btn-outline-dark me-2">
+                    <button
+                        className="btn btn-outline-dark me-2"
+                        onClick={() => filterProduct("women's clothing")}
+                    >
                         Women's products
                     </button>
-                    <button className="btn btn-outline-dark me-2">
+                    <button
+                        className="btn btn-outline-dark me-2"
+                        onClick={() => filterProduct('jewelery')}
+                    >
                         Jewellery
                     </button>
-                    <button className="btn btn-outline-dark me-2">
+                    <button
+                        className="btn btn-outline-dark me-2"
+                        onClick={() => filterProduct('electronics')}
+                    >
                         Electronics
                     </button>
                 </div>
                 {filter.map((product) => {
                     return (
                         <>
-                            <div className="col-md-3">
+                            <div className="col-md-3" key={product.id}>
                                 <div className="card h-100 text-center p-4">
                                     <img
                                         src={product.image}
                                         className="card-img-top"
                                         alt={product.title}
-                                        height="250px"
+                                        height="200px"
                                     />
                                     <div className="card-body">
                                         <h5 className="card-title mb-0">
