@@ -77,7 +77,7 @@ const Products = () => {
             <>
                 <div className="buttons d-flex justify-content-center mb-5  pb=5">
                     <button
-                        className="btn btn-outline-dark"
+                        className="btn btn-outline-dark me-2"
                         onClick={() => setFilter(data)}
                     >
                         All{' '}
@@ -129,7 +129,7 @@ const Products = () => {
                                             to={`/product/${product.id}`}
                                             className="btn btn-outline-dark"
                                         >
-                                            Add to cart
+                                            Buy Now!
                                         </NavLink>
                                     </div>
                                 </div>
